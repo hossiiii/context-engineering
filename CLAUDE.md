@@ -18,6 +18,7 @@
 ### 🧪 Testing & Reliability
 - **Always create unit tests for new features** (functions, classes, routes, etc).
 - **After updating any logic**, check whether existing unit tests need to be updated. If so, do it.
+- **For frontend components**, use Playwright to perform end-to-end testing and verify functionality in browser environments.
 - **Tests should live in a `/tests` or similar folder** mirroring the main app structure.
   - Include at least:
     - 1 test for expected use
