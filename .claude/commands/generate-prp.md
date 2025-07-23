@@ -1,9 +1,16 @@
 # Create PRP
 
-## Feature file: $ARGUMENTS
+## Usage
+- Single argument: `/generate-prp feature_file.md` (uses current directory)
+- Two arguments: `/generate-prp feature_file.md /path/to/development/directory`
+
+## Feature file: $1
+## Development path: ${2:-$(pwd)}
 
 徹底的な調査を含む完全なPRPを汎用機能実装用に生成します。AIエージェントが自己検証と反復的な改良を可能にするために、コンテキストを確実に渡してください。まず機能ファイルを読んで、何を作成す
 る必要があるか、提供された例がどのように役立つか、その他の考慮事項を理解してください。
+
+**開発パス**: 指定されたパス（${2:-$(pwd)}）で作業を行います。
 
 AIエージェントは、PRPに追加するコンテキストとトレーニングデータのみを取得します。AIエージェントはコードベースへのアクセスと同じ知識カットオフを持っていると仮定してください。そのため、調査
 結果をPRPに含めるか参照することが重要です。エージェントはWebsearch機能を持っているので、ドキュメントと例のURLを渡してください。

@@ -23,6 +23,8 @@ cd context-engineering
 # 5. 包括的なPRP（Product Requirements Prompt）を生成
 # Claude Codeで実行：
 /generate-prp INITIAL.md
+# または開発パスを指定：
+/generate-prp INITIAL.md /path/to/development/directory
 
 # 6. PRPを実行して機能を実装
 # Claude Codeで実行：
@@ -131,14 +133,21 @@ PRP（Product Requirements Prompts）は、以下を含む包括的な実装ブ�
 
 Claude Codeで実行：
 ```bash
+# 現在のディレクトリで実行
 /generate-prp INITIAL.md
+
+# 指定したディレクトリで実行
+/generate-prp INITIAL.md /path/to/development/directory
 ```
 
 **注意：** スラッシュコマンドは`.claude/commands/`で定義されたカスタムコマンドです。実装を確認できます：
 - `.claude/commands/generate-prp.md` - PRPの調査と作成方法
 - `.claude/commands/execute-prp.md` - PRPからの機能実装方法
 
-これらのコマンドの`$ARGUMENTS`変数は、コマンド名の後に渡すもの（例：`INITIAL.md`や`PRPs/your-feature.md`）を受け取ります。
+**開発パス指定**：
+- **第一引数**：機能要求ファイル（例：`INITIAL.md`）
+- **第二引数**（オプション）：開発を行うディレクトリパス
+- 第二引数が未指定の場合は現在のディレクトリを使用
 
 このコマンドは以下を行います：
 1. 機能要求を読み取り
