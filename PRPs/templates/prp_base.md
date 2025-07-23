@@ -192,11 +192,27 @@ curl -X POST http://localhost:8000/feature \
 # If error: Check logs at logs/app.log for stack trace
 ```
 
+### Level 4: Frontend Testing (if applicable)
+```bash
+# For frontend components, use Playwright MCP server for E2E testing
+# Navigate to the feature page and test functionality:
+mcp__playwright__browser_navigate "http://localhost:8000/feature"
+mcp__playwright__browser_snapshot  # Verify page loaded correctly
+mcp__playwright__browser_type "input field" "test_value"
+mcp__playwright__browser_click "submit button"
+mcp__playwright__browser_snapshot  # Verify expected result is displayed
+
+# If failing: Check browser console messages and network requests
+mcp__playwright__browser_console_messages
+mcp__playwright__browser_network_requests
+```
+
 ## Final validation Checklist
 - [ ] All tests pass: `uv run pytest tests/ -v`
 - [ ] No linting errors: `uv run ruff check src/`
 - [ ] No type errors: `uv run mypy src/`
 - [ ] Manual test successful: [specific curl/command]
+- [ ] Frontend E2E tests pass (if applicable): Use Playwright MCP server tools for manual verification
 - [ ] Error cases handled gracefully
 - [ ] Logs are informative but not verbose
 - [ ] Documentation updated if needed
