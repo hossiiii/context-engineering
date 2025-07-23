@@ -17,8 +17,21 @@
       "Bash(python -m pytest:*)",
       "Bash(python3 -m pytest:*)",
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(claude-code /doctor)",
+      "Bash(claude /doctor)",
+      "Bash(rm:*)",
+      "Bash(/doctor)",
+      "Bash(claude doctor)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_install",
+      "mcp__playwright__browser_take_screenshot"
     ],
     "deny": []
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
 }
