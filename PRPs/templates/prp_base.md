@@ -2,48 +2,48 @@ name: "Base PRP Template v2 - Context-Rich with Validation Loops"
 description: |
 
 ## Purpose
-Template optimized for AI agents to implement features with sufficient context and self-validation capabilities to achieve working code through iterative refinement.
+AIエージェントが反復的な改良を通じて動作するコードを実現するための、十分なコンテキストと自己検証機能を備えた機能実装に最適化されたテンプレート。
 
 ## Core Principles
-1. **Context is King**: Include ALL necessary documentation, examples, and caveats
-2. **Validation Loops**: Provide executable tests/lints the AI can run and fix
-3. **Information Dense**: Use keywords and patterns from the codebase
-4. **Progressive Success**: Start simple, validate, then enhance
-5. **Global rules**: Be sure to follow all rules in CLAUDE.md
+1. **Context is King**: 必要なすべてのドキュメント、例、注意事項を含める
+2. **Validation Loops**: AIが実行して修正できる実行可能なテスト/リントを提供
+3. **Information Dense**: コードベースのキーワードとパターンを使用
+4. **Progressive Success**: シンプルに始めて、検証し、その後強化
+5. **Global rules**: CLAUDE.mdのすべてのルールに従うこと
 
 ---
 
 ## Goal
-[What needs to be built - be specific about the end state and desires]
+[何を構築する必要があるか - 最終状態と要望について具体的に]
 
 ## Why
-- [Business value and user impact]
-- [Integration with existing features]
-- [Problems this solves and for whom]
+- [ビジネス価値とユーザーへの影響]
+- [既存機能との統合]
+- [これが解決する問題と誰のために]
 
 ## What
-[User-visible behavior and technical requirements]
+[ユーザーに見える動作と技術要件]
 
 ### Success Criteria
-- [ ] [Specific measurable outcomes]
+- [具体的で測定可能な成果]
 
 ## All Needed Context
 
 ### Documentation & References (list all context needed to implement the feature)
 ```yaml
 # MUST READ - Include these in your context window
-- url: [Official API docs URL]
-  why: [Specific sections/methods you'll need]
-  
+- url: [公式APIドキュメントURL]
+  why: [必要な特定のセクション/メソッド]
+
 - file: [path/to/example.py]
-  why: [Pattern to follow, gotchas to avoid]
-  
-- doc: [Library documentation URL] 
-  section: [Specific section about common pitfalls]
-  critical: [Key insight that prevents common errors]
+  why: [従うべきパターン、避けるべき落とし穴]
+
+- doc: [ライブラリドキュメントURL]
+  section: [よくある落とし穴についての特定のセクション]
+  critical: [一般的なエラーを防ぐ重要な洞察]
 
 - docfile: [PRPs/ai_docs/file.md]
-  why: [docs that the user has pasted in to the project]
+  why: [ユーザーがプロジェクトに貼り付けたドキュメント]
 
 ```
 
@@ -58,6 +58,7 @@ Template optimized for AI agents to implement features with sufficient context a
 ```
 
 ### Known Gotchas of our codebase & Library Quirks
+
 ```python
 # CRITICAL: [Library name] requires [specific setup]
 # Example: FastAPI requires async functions for endpoints
@@ -69,7 +70,7 @@ Template optimized for AI agents to implement features with sufficient context a
 
 ### Data models and structure
 
-Create the core data models, we ensure type safety and consistency.
+コアデータモデルを作成し、型安全性と一貫性を確保します。
 ```python
 Examples: 
  - orm models
@@ -99,7 +100,6 @@ Task N:
 ...
 
 ```
-
 
 ### Per task pseudocode as needed added to each task
 ```python

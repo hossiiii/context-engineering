@@ -1,15 +1,15 @@
 ## FEATURE:
 
-[Insert your feature here]
+[ここに機能を挿入してください]
 
 ## EXAMPLES:
 
-[Provide and explain examples that you have in the `examples/` folder]
+[`examples/`フォルダにある例を提供し、説明してください]
 
 ## DOCUMENTATION:
 
-[List out any documentation (web pages, sources for an MCP server like Crawl4AI RAG, etc.) that will need to be referenced during development]
+[開発中に参照する必要があるドキュメント（Webページ、Crawl4AI RAGのようなMCPサーバーのソースなど）をリストアップしてください]
 
 ## OTHER CONSIDERATIONS:
 
-[Any other considerations or specific requirements - great place to include gotchas that you see AI coding assistants miss with your projects a lot]
+[その他の考慮事項や特定の要件 - あなたのプロジェクトでAIコーディングアシスタントがよく見落とす注意点を含めるのに適した場所です]

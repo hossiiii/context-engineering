@@ -2,43 +2,45 @@
 
 ## Feature file: $ARGUMENTS
 
-Generate a complete PRP for general feature implementation with thorough research. Ensure context is passed to the AI agent to enable self-validation and iterative refinement. Read the feature file first to understand what needs to be created, how the examples provided help, and any other considerations.
+徹底的な調査を含む完全なPRPを汎用機能実装用に生成します。AIエージェントが自己検証と反復的な改良を可能にするために、コンテキストを確実に渡してください。まず機能ファイルを読んで、何を作成す
+る必要があるか、提供された例がどのように役立つか、その他の考慮事項を理解してください。
 
-The AI agent only gets the context you are appending to the PRP and training data. Assuma the AI agent has access to the codebase and the same knowledge cutoff as you, so its important that your research findings are included or referenced in the PRP. The Agent has Websearch capabilities, so pass urls to documentation and examples.
+AIエージェントは、PRPに追加するコンテキストとトレーニングデータのみを取得します。AIエージェントはコードベースへのアクセスと同じ知識カットオフを持っていると仮定してください。そのため、調査
+結果をPRPに含めるか参照することが重要です。エージェントはWebsearch機能を持っているので、ドキュメントと例のURLを渡してください。
 
 ## Research Process
 
 1. **Codebase Analysis**
-   - Search for similar features/patterns in the codebase
-   - Identify files to reference in PRP
-   - Note existing conventions to follow
-   - Check test patterns for validation approach
+   - コードベース内の類似機能/パターンを検索
+   - PRPで参照するファイルを特定
+   - 従うべき既存の規約をメモ
+   - 検証アプローチのためのテストパターンをチェック
 
 2. **External Research**
-   - Search for similar features/patterns online
-   - Library documentation (include specific URLs)
-   - Implementation examples (GitHub/StackOverflow/blogs)
-   - Best practices and common pitfalls
+   - オンラインで類似機能/パターンを検索
+   - ライブラリドキュメント（特定のURLを含める）
+   - 実装例（GitHub/StackOverflow/ブログ）
+   - ベストプラクティスとよくある落とし穴
 
 3. **User Clarification** (if needed)
-   - Specific patterns to mirror and where to find them?
-   - Integration requirements and where to find them?
+   - ミラーリングする特定のパターンとその場所は？
+   - 統合要件とその場所は？
 
 ## PRP Generation
 
-Using PRPs/templates/prp_base.md as template:
+`PRPs/templates/prp_base.md`をテンプレートとして使用：
 
 ### Critical Context to Include and pass to the AI agent as part of the PRP
-- **Documentation**: URLs with specific sections
-- **Code Examples**: Real snippets from codebase
-- **Gotchas**: Library quirks, version issues
-- **Patterns**: Existing approaches to follow
+- **Documentation**: 特定のセクションを含むURL
+- **Code Examples**: コードベースからの実際のスニペット
+- **Gotchas**: ライブラリの癖、バージョン問題
+- **Patterns**: 従うべき既存のアプローチ
 
 ### Implementation Blueprint
-- Start with pseudocode showing approach
-- Reference real files for patterns
-- Include error handling strategy
-- list tasks to be completed to fullfill the PRP in the order they should be completed
+- アプローチを示す疑似コードから開始
+- パターンのために実際のファイルを参照
+- エラーハンドリング戦略を含める
+- PRPを完了するために完了すべきタスクを、実行すべき順序でリスト化
 
 ### Validation Gates (Must be Executable) eg for python
 ```bash
@@ -47,23 +49,24 @@ ruff check --fix && mypy .
 
 # Unit Tests
 uv run pytest tests/ -v
-
 ```
 
-*** CRITICAL AFTER YOU ARE DONE RESEARCHING AND EXPLORING THE CODEBASE BEFORE YOU START WRITING THE PRP ***
+*** 重要：調査とコードベースの探索が終わってPRPを書き始める前に ***
 
-*** ULTRATHINK ABOUT THE PRP AND PLAN YOUR APPROACH THEN START WRITING THE PRP ***
+*** PRPについてULTRATHINKしてアプローチを計画してからPRPを書き始めてください ***
+
 
 ## Output
-Save as: `PRPs/{feature-name}.md`
+
+保存先: `PRPs/{feature-name}.md`
 
 ## Quality Checklist
-- [ ] All necessary context included
-- [ ] Validation gates are executable by AI
-- [ ] References existing patterns
-- [ ] Clear implementation path
-- [ ] Error handling documented
+- [ ] 必要なすべてのコンテキストが含まれている
+- [ ] 検証ゲートがAIによって実行可能
+- [ ] 既存のパターンを参照している
+- [ ] 明確な実装パス
+- [ ] エラーハンドリングが文書化されている
 
-Score the PRP on a scale of 1-10 (confidence level to succeed in one-pass implementation using claude codes)
+PRPを1-10のスケールで評価（claude codesを使用してワンパス実装で成功する信頼度レベル）
 
-Remember: The goal is one-pass implementation success through comprehensive context.
+覚えておいてください：目標は包括的なコンテキストによるワンパス実装の成功です。
