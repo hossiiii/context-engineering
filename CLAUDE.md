@@ -19,6 +19,8 @@
 - **Always create unit tests for new features** (functions, classes, routes, etc).
 - **After updating any logic**, check whether existing unit tests need to be updated. If so, do it.
 - **For frontend components**, use Playwright to perform end-to-end testing and verify functionality in browser environments.
+- **Verify build process works** in development environment (e.g., npm run build, cargo build, etc.).
+- **Test development server startup** to ensure the application can be launched locally without errors.
 - **Tests should live in a `/tests` or similar folder** mirroring the main app structure.
   - Include at least:
     - 1 test for expected use

@@ -192,7 +192,32 @@ curl -X POST http://localhost:8000/feature \
 # If error: Check logs at logs/app.log for stack trace
 ```
 
-### Level 4: Frontend Testing (if applicable)
+### Level 4: Build & Development Environment Testing
+```bash
+# Verify build process works in development environment
+npm run build         # For Node.js projects
+# OR
+cargo build          # For Rust projects  
+# OR
+python -m build      # For Python projects
+
+# Expected: Build completes without errors
+# If failing: Check build output for dependency or configuration issues
+```
+
+```bash
+# Test development server startup
+npm run dev          # For Node.js projects
+# OR  
+cargo run --bin server  # For Rust projects
+# OR
+uv run python -m src.main --dev  # For Python projects
+
+# Expected: Server starts successfully on expected port
+# If failing: Check for port conflicts, missing dependencies, or configuration errors
+```
+
+### Level 5: Frontend Testing (if applicable)
 ```bash
 # For frontend components, use Playwright MCP server for E2E testing
 # Navigate to the feature page and test functionality:
@@ -211,6 +236,8 @@ mcp__playwright__browser_network_requests
 - [ ] All tests pass: `uv run pytest tests/ -v`
 - [ ] No linting errors: `uv run ruff check src/`
 - [ ] No type errors: `uv run mypy src/`
+- [ ] Build process works: [npm run build / cargo build / python -m build]
+- [ ] Development server starts: [npm run dev / cargo run / uv run python -m src.main --dev]
 - [ ] Manual test successful: [specific curl/command]
 - [ ] Frontend E2E tests pass (if applicable): Use Playwright MCP server tools for manual verification
 - [ ] Error cases handled gracefully
